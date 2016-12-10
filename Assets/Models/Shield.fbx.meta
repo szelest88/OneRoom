@@ -8,15 +8,20 @@ ModelImporter:
     100000: Handle
     100002: //RootNode
     100004: Shield
+    100006: ShieldCollider
     400000: Handle
     400002: //RootNode
     400004: Shield
+    400006: ShieldCollider
     2300000: Handle
     2300002: Shield
+    2300004: ShieldCollider
     3300000: Handle
     3300002: Shield
+    3300004: ShieldCollider
     4300000: Shield
     4300002: Handle
+    4300004: ShieldCollider
   materials:
     importMaterials: 1
     materialName: 0
