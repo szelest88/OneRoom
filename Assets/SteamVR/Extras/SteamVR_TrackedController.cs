@@ -130,12 +130,19 @@ public class SteamVR_TrackedController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		var system = OpenVR.System;
-		if (system != null && system.GetControllerState(controllerIndex, ref controllerState))
+        
+        var system = OpenVR.System; // this fires
+        Debug.LogError("system is not null: " + (system!=null)); // ok...
+        Debug.Log("we have some state: " + system.GetControllerState(controllerIndex, ref controllerState));// returns false. Why?
+        if (system != null && system.GetControllerState(controllerIndex, ref controllerState))
 		{
-			ulong trigger = controllerState.ulButtonPressed & (1UL << ((int)EVRButtonId.k_EButton_SteamVR_Trigger));
+            Debug.LogError("controllerState" + controllerState.ToString()); // ok...
+
+            ulong trigger = controllerState.ulButtonPressed & (1UL << ((int)EVRButtonId.k_EButton_SteamVR_Trigger));
             if (trigger > 0L && !triggerPressed)
             {
+
+                Debug.LogError("TRIGGER!"); // does not work
                 triggerPressed = true;
                 ClickedEventArgs e;
                 e.controllerIndex = controllerIndex;
