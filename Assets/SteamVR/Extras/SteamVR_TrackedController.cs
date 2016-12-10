@@ -64,7 +64,9 @@ public class SteamVR_TrackedController : MonoBehaviour
 	public virtual void OnTriggerClicked(ClickedEventArgs e)
     {
         if (TriggerClicked != null)
+        {
             TriggerClicked(this, e);
+        }
     }
 
     public virtual void OnTriggerUnclicked(ClickedEventArgs e)
@@ -127,22 +129,35 @@ public class SteamVR_TrackedController : MonoBehaviour
             Ungripped(this, e);
     }
 
+
+    public GameObject bulletDebugCube;
+    public GameObject bulletPositioner;
+    
+    public Transform gunFront, gunBack;
     // Update is called once per frame
     void Update()
     {
         
         var system = OpenVR.System; // this fires
-        Debug.LogError("system is not null: " + (system!=null)); // ok...
-        Debug.Log("we have some state: " + system.GetControllerState(controllerIndex, ref controllerState));// returns false. Why?
         if (system != null && system.GetControllerState(controllerIndex, ref controllerState))
 		{
-            Debug.LogError("controllerState" + controllerState.ToString()); // ok...
-
+            
             ulong trigger = controllerState.ulButtonPressed & (1UL << ((int)EVRButtonId.k_EButton_SteamVR_Trigger));
             if (trigger > 0L && !triggerPressed)
             {
 
                 Debug.LogError("TRIGGER!"); // does not work
+                bulletDebugCube.transform.position = bulletPositioner.transform.position;
+
+                /*
+                 * x = cos(yaw)*cos(pitch)
+y = sin(yaw)*cos(pitch)
+z = sin(pitch)
+*/
+                Vector3 direction = gunFront.position - gunBack.position;
+                bulletDebugCube.GetComponent<Rigidbody>().velocity = direction.normalized*10;
+                //bulletDebugCube.transform.SetParent(null);
+
                 triggerPressed = true;
                 ClickedEventArgs e;
                 e.controllerIndex = controllerIndex;
