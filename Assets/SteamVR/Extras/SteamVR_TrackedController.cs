@@ -134,6 +134,9 @@ public class SteamVR_TrackedController : MonoBehaviour
     public GameObject bulletPositioner;
     
     public Transform gunFront, gunBack;
+    public int bulletSpeed;
+
+    int bulletIndex;
     // Update is called once per frame
     void Update()
     {
@@ -147,17 +150,20 @@ public class SteamVR_TrackedController : MonoBehaviour
             {
 
                 Debug.LogError("TRIGGER!"); // does not work
+                if (bulletIndex < 6)
+                    bulletIndex++;
+                else
+                    bulletIndex = 0;
+                bulletDebugCube = bulletDebugCube.transform.parent.GetChild(bulletIndex).gameObject;
                 bulletDebugCube.transform.position = bulletPositioner.transform.position;
 
-                /*
-                 * x = cos(yaw)*cos(pitch)
-y = sin(yaw)*cos(pitch)
-z = sin(pitch)
-*/
-                Vector3 direction = gunFront.position - gunBack.position;
-                bulletDebugCube.GetComponent<Rigidbody>().velocity = direction.normalized*10;
-                //bulletDebugCube.transform.SetParent(null);
 
+                
+                Vector3 direction = gunFront.position - gunBack.position;
+
+                bulletDebugCube.GetComponent<MeshRenderer>().enabled = true;
+                bulletDebugCube.GetComponent<Rigidbody>().velocity = direction.normalized*bulletSpeed;
+                
                 triggerPressed = true;
                 ClickedEventArgs e;
                 e.controllerIndex = controllerIndex;

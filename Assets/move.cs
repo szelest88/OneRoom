@@ -3,7 +3,7 @@ using System.Collections;
 
 public class move : MonoBehaviour {
 
-    static bool stop = true;
+    static bool stop = false;
     public Vector3 moveVector;
 	// Use this for initialization
 	void Start () {
