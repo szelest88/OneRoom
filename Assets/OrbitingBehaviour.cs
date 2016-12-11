@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class OrbitingBehaviour : MonoBehaviour {
-    public float radius;
+    public float radius = 2;
     public Transform target;
     public float offset;
     public bool direction;
@@ -49,8 +49,9 @@ public class OrbitingBehaviour : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate() {
         x++;
-        //if (x % 10 == 0)
+        if (x % 10 == 0)
         {
+            
             alpha = Mathf.Atan2(transform.position.x-target.position.z,transform.position.z-target.position.z);        
             // fix the movement vector
             rigidBody.AddForce(5*calcDir(transform.position,new Vector3(0,0,0),radius,alpha)); // addforce było nieźle...

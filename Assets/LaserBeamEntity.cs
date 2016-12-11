@@ -6,7 +6,7 @@ public class LaserBeamEntity : MonoBehaviour {
     private const float Force = 1f;
 
     public Rigidbody rigidBody;
-
+    
     public void Go(Vector3 direction)
     {
         var dir = direction.normalized;
