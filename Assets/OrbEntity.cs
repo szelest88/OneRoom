@@ -2,11 +2,11 @@
 using UnityEngine;
 
 public class OrbEntity : MonoBehaviour {
-    GameObject player;
+    public GameObject player;
     public GameObject laserBeamPrefab;
     void Awake()
     {
-        player = GameObject.Find("[CameraRig]/Camera (head)");
+        player = GameObject.FindGameObjectWithTag("MainCamera");
     }
     public void Shoot(Vector3 direction)
     {
