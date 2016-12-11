@@ -10,7 +10,7 @@ public class OrbitingBehaviour : MonoBehaviour {
     //Vec
 	// Use this for initialization
 	void Start () {
-        Debug.Log("start orbiting behvior");
+        //Debug.Log("start orbiting behvior");
         rigidBody = GetComponent<Rigidbody>();
         if ((transform.position - target.position).magnitude > radius)
         {
@@ -19,14 +19,14 @@ public class OrbitingBehaviour : MonoBehaviour {
             //rigidBody.velocity = velocity*20;
          //   rigidBody.AddForce(velocity.normalized * 3,ForceMode.VelocityChange);
             
-            Debug.Log("setting velocity to " + velocity);
+      //      Debug.Log("setting velocity to " + velocity);
 
         }
         else
         {
        //     rigidBody.velocity = new Vector3(0, 0, 0);
 
-            Debug.Log("setting velocity to " + rigidBody.velocity);
+    //        Debug.Log("setting velocity to " + rigidBody.velocity);
         }
 
 	}
