@@ -19,9 +19,9 @@ TagManager:
   - wall4
   - floor
   - enemy
-  - 
-  - 
-  - 
+  - enemyBullet
+  - player
+  - playerBullet
   - 
   - 
   - 

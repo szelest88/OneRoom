@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000014249409560}
   - 33: {fileID: 33000013922172656}
   - 23: {fileID: 23000014219696542}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: OrbShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - 33: {fileID: 33000011026534570}
   - 23: {fileID: 23000013133933382}
   - 64: {fileID: 64000010995883030}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: OrbCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011734204584}
-  m_Layer: 0
+  - 114: {fileID: 114000011990123846}
+  m_Layer: 13
   m_Name: Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +72,7 @@ GameObject:
   - 4: {fileID: 4000013276951720}
   - 33: {fileID: 33000013889269796}
   - 23: {fileID: 23000011193427962}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,3 +255,16 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: c5df99affec011a49b5474cfb7cd5d84, type: 3}
+--- !u!114 &114000011990123846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012338260228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab53ad163cefe146beb0a8e4840fce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserBeamPrefab: {fileID: 1000013345081764, guid: b1308c88446afd74081afc6042f6a127,
+    type: 2}
