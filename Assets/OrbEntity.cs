@@ -24,7 +24,6 @@ public class OrbEntity : MonoBehaviour {
             if (player != null)
             { 
             Shoot(player.transform.position-this.transform.position);
-                Debug.LogError("JEB!");
             }
         }
     }
