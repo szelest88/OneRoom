@@ -39,11 +39,18 @@ public class ProtoEnemyController2 : MonoBehaviour {
         shieldRemoved = true;
         orbShield.SetActive(false);
     }
-    private void OnTriggerEnter(Collider other)
+
+    void OnCollisionEnter(Collision collision)
     {
-        if (!shieldRemoved)
-            removeShield();
-        else
-            dieBastard();
+        if (collision.gameObject.GetComponent<Damage>() != null) {
+            if (!shieldRemoved)
+            {
+                removeShield();
+            }
+            else
+            {
+                dieBastard();
+            }
+    }
     }
 }
