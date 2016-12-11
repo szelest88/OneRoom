@@ -10,14 +10,9 @@ public class OrbEntity : MonoBehaviour {
     }
     public void Shoot(Vector3 direction)
     {
-        try
-        {
             var laserBeamObject = (GameObject)Instantiate(laserBeamPrefab, transform.position, transform.rotation);
             laserBeamObject.GetComponent<LaserBeamEntity>().Go(direction);
-        }catch(Exception e)
-        {
-            Debug.LogError("AA" + e.StackTrace);
-        }
+        
     }
 
     int count = 0;

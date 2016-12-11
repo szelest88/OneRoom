@@ -130,13 +130,11 @@ public class SteamVR_TrackedController : MonoBehaviour
     }
 
 
-    public GameObject bulletDebugCube;
-    public GameObject bulletPositioner;
     
-    public Transform gunFront, gunBack;
     public int bulletSpeed;
 
-    int bulletIndex;
+    public GameObject bulletPrefab;
+    
     // Update is called once per frame
     void Update()
     {
@@ -148,22 +146,10 @@ public class SteamVR_TrackedController : MonoBehaviour
             ulong trigger = controllerState.ulButtonPressed & (1UL << ((int)EVRButtonId.k_EButton_SteamVR_Trigger));
             if (trigger > 0L && !triggerPressed)
             {
-
-                Debug.LogError("TRIGGER!"); // does not work
-                if (bulletIndex < 6)
-                    bulletIndex++;
-                else
-                    bulletIndex = 0;
-                bulletDebugCube = bulletDebugCube.transform.parent.GetChild(bulletIndex).gameObject;
-                bulletDebugCube.transform.position = bulletPositioner.transform.position;
-
-
                 
-                Vector3 direction = gunFront.position - gunBack.position;
+                var bullet = (GameObject)Instantiate(bulletPrefab, transform.position, transform.rotation);
+                bullet.GetComponent<Rigidbody>().velocity = transform.rotation * Vector3.forward * bulletSpeed;
 
-                bulletDebugCube.GetComponent<MeshRenderer>().enabled = true;
-                bulletDebugCube.GetComponent<Rigidbody>().velocity = direction.normalized*bulletSpeed;
-                
                 triggerPressed = true;
                 ClickedEventArgs e;
                 e.controllerIndex = controllerIndex;
