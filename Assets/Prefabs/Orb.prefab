@@ -93,7 +93,7 @@ GameObject:
   - 54: {fileID: 54000011506332332}
   - 135: {fileID: 135000011153680980}
   - 114: {fileID: 114000011639920952}
-  - 114: {fileID: 114000013617016878}
+  - 114: {fileID: 114000012661091570}
   m_Layer: 13
   m_Name: Orb
   m_TagString: Untagged
@@ -554,13 +554,17 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012338260228}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ab53ad163cefe146beb0a8e4840fce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   laserBeamPrefab: {fileID: 1000013345081764, guid: b1308c88446afd74081afc6042f6a127,
     type: 2}
+  healthBar: {fileID: 114000011539103326}
+  shieldBar: {fileID: 114000011591679084}
+  maxShield: 100
+  maxHealth: 100
 --- !u!114 &114000012523230932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -572,7 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dc187ba4191a54aa2635f9abe19587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000013617016878
+--- !u!114 &114000012661091570
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -580,10 +584,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000012338260228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0634a59ec58af46b6f9dff321f4c69, type: 3}
+  m_Script: {fileID: 11500000, guid: d5da890db829eea4680ab4c71c08dd51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbShield: {fileID: 0}
+  shootingIntervalInSeconds: 1
 --- !u!135 &135000011153680980
 SphereCollider:
   m_ObjectHideFlags: 1
