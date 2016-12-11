@@ -1,30 +1,53 @@
 ﻿using System;
 using UnityEngine;
 
-public class OrbEntity : MonoBehaviour {
-    GameObject player;
+public class OrbEntity : MonoBehaviour
+{
     public GameObject laserBeamPrefab;
-    void Awake()
+    public BarEntity healthBar;
+    public BarEntity shieldBar;
+
+    public int maxShield = 100;
+    public int maxHealth = 100;
+    private int shield;
+    private int health;
+
+    private void Start()
     {
-        player = GameObject.Find("[CameraRig]/Camera (head)");
-    }
-    public void Shoot(Vector3 direction)
-    {
-            var laserBeamObject = (GameObject)Instantiate(laserBeamPrefab, transform.position, transform.rotation);
-            laserBeamObject.GetComponent<LaserBeamEntity>().Go(direction);
-        
+        shield = maxHealth;
+        health = maxHealth;
     }
 
-    int count = 0;
-    void FixedUpdate()
+    public void Shoot(Vector3 direction)
     {
-        count++;
-        if (count % 400 == 0)
+        var laserBeamObject = (GameObject)Instantiate(laserBeamPrefab, transform.position, transform.rotation);
+        laserBeamObject.GetComponent<LaserBeamEntity>().Go(direction);
+    }
+
+    private void Update()
+    {
+        healthBar.progress = (float)health / (float)maxHealth;
+        shieldBar.progress = (float)shield / (float)maxShield;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Damage damage = collision.gameObject.GetComponent<Damage>();
+
+        if (damage != null)
         {
-            if (player != null)
-            { 
-            Shoot(player.transform.position-this.transform.position);
-                Debug.LogError("JEB!");
+            if (shield >= 0)
+            {
+                shield = Math.Max(0, shield - damage.amount);
+            }
+            else if (health >= 0)
+            {
+                health = Math.Max(0, health - damage.amount);
+            }
+
+            if (health == 0)
+            {
+                Destroy(gameObject);
             }
         }
     }
