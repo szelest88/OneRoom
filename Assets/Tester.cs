@@ -16,8 +16,8 @@ public class Tester : MonoBehaviour {
         {
             var camPos = Camera.main.transform.position;
 
-            orbEntity.Shoot(camPos - transform.position);
-            //orbEntity.Shoot(new Vector3(0.0f, 1.0f, 0.0f));
+            //orbEntity.Shoot(camPos - transform.position);
+            orbEntity.Shoot(new Vector3(1.0f, 0.0f, 0.0f));
 
         }
 	}
