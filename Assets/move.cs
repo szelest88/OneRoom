@@ -4,11 +4,11 @@ using System.Collections;
 public class move : MonoBehaviour {
 
     static bool stop = false;
-    public float speed;
+    public Vector3 direction;
 	// Use this for initialization
 	void Start () {
         if(!stop)
-        GetComponent<Rigidbody>().velocity = transform.rotation * Vector3.forward * speed;
+        GetComponent<Rigidbody>().velocity = direction;
 	}
 	
 	// Update is called once per frame
