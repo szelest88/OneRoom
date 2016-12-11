@@ -40,6 +40,7 @@ GameObject:
   - 4: {fileID: 4000012305180538}
   - 33: {fileID: 33000010149552778}
   - 23: {fileID: 23000013997286568}
+  - 64: {fileID: 64000012518291204}
   m_Layer: 14
   m_Name: LaserBeamCollider
   m_TagString: Untagged
@@ -57,7 +58,6 @@ GameObject:
   - 4: {fileID: 4000010865984740}
   - 54: {fileID: 54000010815041068}
   - 114: {fileID: 114000013578411968}
-  - 64: {fileID: 64000012267322908}
   m_Layer: 14
   m_Name: LaserBeam
   m_TagString: Untagged
@@ -193,12 +193,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!64 &64000012267322908
+--- !u!64 &64000012518291204
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013345081764}
+  m_GameObject: {fileID: 1000013338725400}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -267,7 +267,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: -2091443538
+  randomSeed: -434478120
   InitialModule:
     serializedVersion: 2
     enabled: 1
