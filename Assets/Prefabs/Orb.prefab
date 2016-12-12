@@ -579,7 +579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserBeamPrefab: {fileID: 1000013345081764, guid: b1308c88446afd74081afc6042f6a127,
     type: 2}
-  shieldObject: {fileID: 0}
+  shieldObject: {fileID: 1000011538091380}
   healthBar: {fileID: 114000011539103326}
   shieldBar: {fileID: 114000011591679084}
   maxShield: 100

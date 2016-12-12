@@ -46,7 +46,7 @@ public class OrbEntity : MonoBehaviour
                 health = Math.Max(0, health - damage.amount);
             }
 
-            //Debug.LogFormat("Damage: {0}, health: {1}, shield: {2}", damage.amount, health, shield);
+            Debug.LogFormat("Damage: {0}, health: {1}, shield: {2}", damage.amount, health, shield);
 
             if (shield == 0)
             {
