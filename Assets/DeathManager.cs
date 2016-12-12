@@ -3,6 +3,7 @@ using System.Collections;
 
 public class DeathManager : MonoBehaviour {
     public GameObject endgame;
+    public GameObject particles;
 	// Use this for initialization
 	void Start () {
         if (GlobalData.didWon)
@@ -12,6 +13,7 @@ public class DeathManager : MonoBehaviour {
             {
                 tm.fontSize = 160;
                 tm.text = "You won!";
+                particles.SetActive(true);
             }
 
             GameObject.Find("Camera (eye)").GetComponent<Camera>().backgroundColor = new Color(0f, 0.7f, 1);

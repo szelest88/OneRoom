@@ -3,19 +3,20 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class OrbManager : MonoBehaviour {
-    public static  int orbCount = 0;
+    private int orbCount = 0;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         orbCount = transform.childCount;
 
 	}
-	void deleteOneOrb()
+	public void removeOneOrb()
     {
         orbCount--;
+        Debug.LogError("ORB DELETED, ORB COUNT = " + orbCount);
         if(orbCount == 0)
         {
             GlobalData.didWon = true;
-            Debug.LogError("DEAD!");
+            Debug.LogError("DEAD, but WON!");
             SceneManager.LoadScene("deathScene");
         }
     }

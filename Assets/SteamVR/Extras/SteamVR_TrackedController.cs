@@ -151,10 +151,14 @@ public class SteamVR_TrackedController : MonoBehaviour
         var system = OpenVR.System; // this fires
         if (system != null && system.GetControllerState(controllerIndex, ref controllerState))
 		{
-            
+
             ulong trigger = controllerState.ulButtonPressed & (1UL << ((int)EVRButtonId.k_EButton_SteamVR_Trigger));
+            
+
             if (trigger > 0L && !triggerPressed)
             {
+
+            //    SteamVR_Controller.Input((int)controllerIndex).TriggerHapticPulse(2000);
                 if (is_gun)         
                 {
                     var bullet = (GameObject)Instantiate(bulletPrefab, transform.position, transform.rotation);
@@ -220,6 +224,7 @@ public class SteamVR_TrackedController : MonoBehaviour
             }
             else if (pad == 0L && padPressed)
             {
+                
                 padPressed = false;
                 ClickedEventArgs e;
                 e.controllerIndex = controllerIndex;
@@ -235,6 +240,7 @@ public class SteamVR_TrackedController : MonoBehaviour
                 menuPressed = true;
                 ClickedEventArgs e;
                 e.controllerIndex = controllerIndex;
+                
                 e.flags = (uint)controllerState.ulButtonPressed;
                 e.padX = controllerState.rAxis0.x;
                 e.padY = controllerState.rAxis0.y;
@@ -254,6 +260,7 @@ public class SteamVR_TrackedController : MonoBehaviour
             pad = controllerState.ulButtonTouched & (1UL << ((int)EVRButtonId.k_EButton_SteamVR_Touchpad));
             if (pad > 0L && !padTouched)
             {
+                
                 padTouched = true;
                 ClickedEventArgs e;
                 e.controllerIndex = controllerIndex;
@@ -272,6 +279,11 @@ public class SteamVR_TrackedController : MonoBehaviour
                 e.padX = controllerState.rAxis0.x;
                 e.padY = controllerState.rAxis0.y;
                 OnPadUntouched(e);
+            }
+            if (triggerPressed && is_gun)
+            {
+                    SteamVR_Controller.Input((int)controllerIndex).TriggerHapticPulse(2000);
+                
             }
         }
     }

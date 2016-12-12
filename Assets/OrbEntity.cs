@@ -12,11 +12,13 @@ public class OrbEntity : MonoBehaviour
     public int maxHealth = 100;
     private int shield;
     private int health;
+    public OrbManager orbManager;
 
     private void Start()
     {
         shield = maxHealth;
         health = maxHealth;
+        orbManager = transform.parent.GetComponent<OrbManager>();
     }
 
     public void Shoot(Vector3 direction)
@@ -55,8 +57,8 @@ public class OrbEntity : MonoBehaviour
 
             if (health == 0)
             {
+                orbManager.removeOneOrb();
                 Destroy(gameObject);
-                OrbManager.orbCount--;
             }
         }
     }
