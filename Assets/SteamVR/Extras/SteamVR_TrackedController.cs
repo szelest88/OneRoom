@@ -277,11 +277,7 @@ public class SteamVR_TrackedController : MonoBehaviour
                 e.padY = controllerState.rAxis0.y;
                 OnPadUntouched(e);
             }
-            if (triggerPressed && is_gun)
-            {
-                    SteamVR_Controller.Input((int)controllerIndex).TriggerHapticPulse(2000);
-                
-            }
+
             if(triggerPressed && !is_gun)
             {
                 shield.Trigger();

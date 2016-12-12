@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011306080492}
   - 33: {fileID: 33000013426786966}
-  - 65: {fileID: 65000010708346514}
   - 23: {fileID: 23000010284470214}
   m_Layer: 0
   m_Name: Stripe
@@ -126,7 +125,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010988317290}
   - 33: {fileID: 33000011944241284}
-  - 65: {fileID: 65000013601892752}
   - 23: {fileID: 23000010007761336}
   m_Layer: 0
   m_Name: Stripe
@@ -501,30 +499,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: c5df99affec011a49b5474cfb7cd5d84, type: 3}
---- !u!65 &65000010708346514
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010441637324}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65000013601892752
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013716201308}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114000011539103326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -584,6 +558,7 @@ MonoBehaviour:
   shieldBar: {fileID: 114000011591679084}
   maxShield: 100
   maxHealth: 100
+  orbManager: {fileID: 0}
 --- !u!114 &114000012124209636
 MonoBehaviour:
   m_ObjectHideFlags: 1
