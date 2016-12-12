@@ -11,7 +11,7 @@ public class OrbShootingBehaviour : MonoBehaviour
     void Awake()
     {
         orbEntity = GetComponent<OrbEntity>();
-        player = GameObject.Find("[CameraRig]/Camera (head)");
+        player = GameObject.Find("[CameraRig]/Camera (eye)");
     }
 
     int i;
@@ -21,7 +21,6 @@ public class OrbShootingBehaviour : MonoBehaviour
 
         if (i % 400 == 0)
         {
-            Debug.Log("Shoot");
             orbEntity.Shoot(player.transform.position - this.transform.position);
         }
     }
