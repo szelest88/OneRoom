@@ -59,6 +59,7 @@ GameObject:
   - 54: {fileID: 54000010861348924}
   - 114: {fileID: 114000013810358898}
   - 114: {fileID: 114000010401757950}
+  - 135: {fileID: 135000010408824624}
   m_Layer: 16
   m_Name: Bullet
   m_TagString: Untagged
@@ -229,6 +230,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf0c9a3b96c8b444b0e8f7e93f1c52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &135000010408824624
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011641667794}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198000013781751626
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -269,7 +282,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: -1740497327
+  randomSeed: 995874215
   InitialModule:
     serializedVersion: 2
     enabled: 1

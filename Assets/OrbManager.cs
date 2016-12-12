@@ -12,7 +12,6 @@ public class OrbManager : MonoBehaviour {
 	public void removeOneOrb()
     {
         orbCount--;
-        Debug.LogError("ORB DELETED, ORB COUNT = " + orbCount);
         if(orbCount == 0)
         {
             GlobalData.didWon = true;

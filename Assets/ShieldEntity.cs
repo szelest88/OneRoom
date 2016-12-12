@@ -84,10 +84,14 @@ public class ShieldEntity : MonoBehaviour
     {
         var damage = collision.gameObject.GetComponent<Damage>();
 
+        var damageAmount = 10;
         if (damage != null)
         {
-            shieldEnergy = Math.Max(0, shieldEnergy - damage.amount);
-            shieldEnergyFloat = shieldEnergy;
+            damageAmount = damage.amount;
         }
+
+        //Debug.LogError("shield hit, damage: "+ damage.amount);
+        shieldEnergy = Math.Max(0, shieldEnergy - damageAmount);
+        shieldEnergyFloat = shieldEnergy;
     }
 }

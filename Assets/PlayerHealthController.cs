@@ -23,8 +23,7 @@ public class PlayerHealthController : MonoBehaviour
             life -= damageAsFraction;
             
             //dfsfs
-            Debug.LogError("SHOT!");
-            healthBar.sizeDelta = new Vector2(life, 0.42f);
+             healthBar.sizeDelta = new Vector2(life, 0.42f);
             if (life < 0.01f)
             {
                 Debug.LogError("DEAD!");

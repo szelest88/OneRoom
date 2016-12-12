@@ -12,7 +12,7 @@ public class OrbShootingBehaviour : MonoBehaviour
     {
         orbEntity = GetComponent<OrbEntity>();
 
-        if (player != null)
+        if (player == null)
         {
             player = GameObject.Find("[CameraRig]/Camera (eye)");
         }

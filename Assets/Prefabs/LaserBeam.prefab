@@ -58,6 +58,7 @@ GameObject:
   - 4: {fileID: 4000010865984740}
   - 54: {fileID: 54000010815041068}
   - 114: {fileID: 114000013578411968}
+  - 114: {fileID: 114000011186292982}
   m_Layer: 14
   m_Name: LaserBeam
   m_TagString: Untagged
@@ -205,6 +206,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 91a5439d2fa064145b358dee347a7db9, type: 3}
+--- !u!114 &114000011186292982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013345081764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b273c920e13b45a9fb7a157b3eda4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 10
 --- !u!114 &114000013578411968
 MonoBehaviour:
   m_ObjectHideFlags: 1

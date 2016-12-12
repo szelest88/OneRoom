@@ -64,7 +64,7 @@ public class SteamVR_TrackedController : MonoBehaviour
             }
         }
     }
-    bool is_gun;
+    public bool is_gun;
 	public void SetDeviceIndex(int index)
 	{
 			this.controllerIndex = (uint) index;
@@ -143,7 +143,7 @@ public class SteamVR_TrackedController : MonoBehaviour
     public int bulletSpeed;
 
     public GameObject bulletPrefab;
-    
+    public ShieldEntity shield;
     // Update is called once per frame
     void Update()
     {
@@ -161,12 +161,9 @@ public class SteamVR_TrackedController : MonoBehaviour
             //    SteamVR_Controller.Input((int)controllerIndex).TriggerHapticPulse(2000);
                 if (is_gun)         
                 {
+                    Debug.LogError("JEB Z GUNA!");
                     var bullet = (GameObject)Instantiate(bulletPrefab, transform.position, transform.rotation);
                     bullet.GetComponent<Rigidbody>().velocity = transform.rotation * Vector3.forward * bulletSpeed;
-                }else
-                {
-
-                    SceneManager.LoadScene("AMScene");
                 }
                 triggerPressed = true;
                 ClickedEventArgs e;
@@ -284,6 +281,10 @@ public class SteamVR_TrackedController : MonoBehaviour
             {
                     SteamVR_Controller.Input((int)controllerIndex).TriggerHapticPulse(2000);
                 
+            }
+            if(triggerPressed && !is_gun)
+            {
+                shield.Trigger();
             }
         }
     }
