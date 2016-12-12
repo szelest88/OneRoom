@@ -3,6 +3,6 @@ using System.Collections;
 
 public class Damage : MonoBehaviour {
 
-    public int amount = 10;
+    public int amount = 100;
 
 }

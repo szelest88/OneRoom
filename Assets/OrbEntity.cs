@@ -4,6 +4,7 @@ using UnityEngine;
 public class OrbEntity : MonoBehaviour
 {
     public GameObject laserBeamPrefab;
+    public GameObject shieldObject;
     public BarEntity healthBar;
     public BarEntity shieldBar;
 
@@ -36,13 +37,20 @@ public class OrbEntity : MonoBehaviour
 
         if (damage != null)
         {
-            if (shield >= 0)
+            if (shield > 0)
             {
                 shield = Math.Max(0, shield - damage.amount);
             }
-            else if (health >= 0)
+            else if (health > 0)
             {
                 health = Math.Max(0, health - damage.amount);
+            }
+
+            Debug.LogFormat("Damage: {0}, health: {1}, shield: {2}", damage.amount, health, shield);
+            
+            if (shield == 0)
+            {
+                shieldObject.SetActive(false);
             }
 
             if (health == 0)

@@ -37,6 +37,7 @@ public class SteamVR_TrackedController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        is_gun = true;
         if (this.GetComponent<SteamVR_TrackedObject>() == null)
         {
             gameObject.AddComponent<SteamVR_TrackedObject>();
@@ -54,8 +55,15 @@ public class SteamVR_TrackedController : MonoBehaviour
 		{
 			controllerIndex = (uint) this.GetComponent<SteamVR_TrackedObject>().index;
         }
+        for(int i =0;i<transform.childCount; i++)
+        {
+            if (transform.GetChild(i).name == "Shield")
+            {
+                is_gun = false;
+            }
+        }
     }
-
+    bool is_gun;
 	public void SetDeviceIndex(int index)
 	{
 			this.controllerIndex = (uint) index;
@@ -146,10 +154,11 @@ public class SteamVR_TrackedController : MonoBehaviour
             ulong trigger = controllerState.ulButtonPressed & (1UL << ((int)EVRButtonId.k_EButton_SteamVR_Trigger));
             if (trigger > 0L && !triggerPressed)
             {
-                
-                var bullet = (GameObject)Instantiate(bulletPrefab, transform.position, transform.rotation);
-                bullet.GetComponent<Rigidbody>().velocity = transform.rotation * Vector3.forward * bulletSpeed;
-
+                if (is_gun)
+                {
+                    var bullet = (GameObject)Instantiate(bulletPrefab, transform.position, transform.rotation);
+                    bullet.GetComponent<Rigidbody>().velocity = transform.rotation * Vector3.forward * bulletSpeed;
+                }
                 triggerPressed = true;
                 ClickedEventArgs e;
                 e.controllerIndex = controllerIndex;

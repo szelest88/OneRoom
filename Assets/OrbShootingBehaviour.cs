@@ -14,9 +14,15 @@ public class OrbShootingBehaviour : MonoBehaviour
         player = GameObject.Find("[CameraRig]/Camera (head)");
     }
 
-    private IEnumerator Update()
+    int i;
+    private void FixedUpdate()
     {
-        orbEntity.Shoot(player.transform.position - this.transform.position);
-        yield return new WaitForSeconds(shootingIntervalInSeconds);
+        i++;
+
+        if (i % 400 == 0)
+        {
+            Debug.Log("Shoot");
+            orbEntity.Shoot(player.transform.position - this.transform.position);
+        }
     }
 }

@@ -9,7 +9,7 @@ public class PlayerHealthController : MonoBehaviour
     {
 
     }
-    public UnityEngine.UI.Slider slider;
+    public GameObject gobject;
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == 14) // 14 is enemyBullet in layers list...
@@ -17,7 +17,7 @@ public class PlayerHealthController : MonoBehaviour
             
             //dfsfs
             Debug.LogError("SHOT!");
-            slider.value -= 0.1f;
+           // gobject.transform.localScale.y -= 0.1f;
         }
     }
 
