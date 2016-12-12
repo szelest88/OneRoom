@@ -26,14 +26,14 @@ public class BarEntity : MonoBehaviour
                 stripePosition.z);
         }
 
-        //{
-        //    var stripeScale = stripe.transform.localScale;
+        {
+            var stripeScale = stripe.transform.localScale;
 
-        //    stripe.transform.localScale = new Vector3(
-        //        stripeScaleXInitial * progress,
-        //        stripeScale.y,
-        //        stripeScale.z);
-        //}
+            stripe.transform.localScale = new Vector3(
+                stripeScaleXInitial * progress,
+                stripeScale.y,
+                stripeScale.z);
+        }
     }
 
 }
