@@ -13,9 +13,11 @@ public class DeathManager : MonoBehaviour {
                 tm.fontSize = 160;
                 tm.text = "You won!";
             }
+
+            GameObject.Find("Camera (eye)").GetComponent<Camera>().backgroundColor = new Color(0f, 0.7f, 1);
         }
 
-        GlobalData.didWon = true; // reset the state for the next game
+        GlobalData.didWon = false; // reset the state for the next game
 	}
 	
 }
