@@ -5,8 +5,8 @@ public class OrbShootingBehaviour : MonoBehaviour
 {
     public float shootingIntervalInSeconds = 1.0f;
 
-    private OrbEntity orbEntity;
-    private GameObject player;
+    public OrbEntity orbEntity; // public for debug
+    public GameObject player;
 
     void Awake()
     {
@@ -18,7 +18,7 @@ public class OrbShootingBehaviour : MonoBehaviour
     private void FixedUpdate()
     {
         i++;
-
+        
         if (i % 400 == 0)
         {
             orbEntity.Shoot(player.transform.position - this.transform.position);

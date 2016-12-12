@@ -7,3 +7,5 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/SteamVR/Scenes/AMScene.unity
+  - enabled: 1
+    path: Assets/SteamVR/Scenes/deathScene.unity
