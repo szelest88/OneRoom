@@ -155,7 +155,7 @@ public class SteamVR_TrackedController : MonoBehaviour
             ulong trigger = controllerState.ulButtonPressed & (1UL << ((int)EVRButtonId.k_EButton_SteamVR_Trigger));
             if (trigger > 0L && !triggerPressed)
             {
-                if (is_gun)
+                if (is_gun)         
                 {
                     var bullet = (GameObject)Instantiate(bulletPrefab, transform.position, transform.rotation);
                     bullet.GetComponent<Rigidbody>().velocity = transform.rotation * Vector3.forward * bulletSpeed;
