@@ -1,5 +1,6 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Valve.VR;
 
 public struct ClickedEventArgs
@@ -158,6 +159,10 @@ public class SteamVR_TrackedController : MonoBehaviour
                 {
                     var bullet = (GameObject)Instantiate(bulletPrefab, transform.position, transform.rotation);
                     bullet.GetComponent<Rigidbody>().velocity = transform.rotation * Vector3.forward * bulletSpeed;
+                }else
+                {
+
+                    SceneManager.LoadScene("AMScene");
                 }
                 triggerPressed = true;
                 ClickedEventArgs e;
