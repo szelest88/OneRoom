@@ -1,2 +1,2 @@
 # OneRoom
-Game jam VR app about room
+Game jam VR game about room
